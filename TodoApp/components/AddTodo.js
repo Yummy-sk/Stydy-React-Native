@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 import image from '../assets/icons/add_white/add_white.png';
 
-export default function AddTodo() {
+export default function AddTodo({onInsert}) {
   const [text, setText] = useState('');
 
   const onPress = () => {
+    onInsert(text);
     setText('');
     Keyboard.dismiss();
   };
